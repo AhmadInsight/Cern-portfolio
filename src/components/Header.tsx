@@ -6,7 +6,7 @@ export const Header = () => {
     <div id="home" className="header-wraper">
       <div className="main-info">
         <ReactTyped
-          className="typed-text-new"
+          className="typed-text-new text-gradient"
           strings={["I am Ahmad Hassan"]}
           typeSpeed={50}
         />

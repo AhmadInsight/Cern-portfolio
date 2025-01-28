@@ -22,8 +22,10 @@ const TestimonialsCarousel = () => {
           <h3>Aliya Rahman</h3>
           <p>
            
-Working with Waheed was a pleasure! He turned my vision for an online organic shop into a stunning, user-friendly website. His responsiveness and insights exceeded expectations, and the results are already driving traffic and sales. Highly recommended!
-          </p>
+Working with Ahmad was a pleasure! He turned my vision for an
+            online organic shop into a stunning, user-friendly website. His
+            responsiveness and insights exceeded expectations, and the results
+            are already driving traffic and sales. Highly recommended!          </p>
         </span>
       </>
       <>
@@ -31,8 +33,11 @@ Working with Waheed was a pleasure! He turned my vision for an online organic sh
         <div className="myCarousel">
           <h3>David Thompson</h3>
           <p>
-          Waheed is a true professional! He crafted a stunning, modern portfolio website that beautifully showcases my photography, with exceptional attention to design, detail, and responsiveness. I’ve already received countless compliments—if you need a creative web developer, Waheed is the one!
-          </p>
+Ahmad is a true professional! He crafted a stunning, modern
+            portfolio website that beautifully showcases my photography, with
+            exceptional attention to design, detail, and responsiveness. I’ve
+            already received countless compliments—if you need a creative web
+            developer, Ahmad is the one!          </p>
         </div>
       </>
       <>
@@ -41,8 +46,11 @@ Working with Waheed was a pleasure! He turned my vision for an online organic sh
         <div className="myCarousel">
           <h3>Amina El-Sayed</h3>
           <p>
-          Waheed excelled in developing my online learning platform with a user-friendly layout and key features like student progress tracking. His expertise in modern web technologies made the platform fast, secure, and reliable. Professional, efficient, and a pleasure to work with—I'm thrilled with the result!          </p>
-        </div>
+Ahmad excelled in developing my online learning platform with a
+            user-friendly layout and key features like student progress
+            tracking. His expertise in modern web technologies made the platform
+            fast, secure, and reliable. Professional, efficient, and a pleasure
+            to work with—I&#39;m thrilled with the result!{" "}        </div>
       </>
       <>
         {/* Avatar 4 */}
@@ -51,8 +59,11 @@ Working with Waheed was a pleasure! He turned my vision for an online organic sh
           <h3>Jason Lee</h3>
           <p>
           
-Waheed exceeded our expectations with a clean, professional website that perfectly represents our brand. Elegant, fast, and SEO-optimized, his attention to detail and communication made the process seamless. Waheed truly goes above and beyond—highly recommended!
-          </p>
+Ahmad exceeded our expectations with a clean, professional website
+            that perfectly represents our brand. Elegant, fast, and
+            SEO-optimized, his attention to detail and communication made the
+            process seamless. Ahmad truly goes above and beyond—highly
+            recommended!          </p>
         </div>
       </>
     </Carousel>

@@ -79,7 +79,7 @@ function App() {
                   area: 900,
                 },
               },
-              color: { value: "#f9ab00" },
+              color: { value: "#E7A6E3" },
               links: {
                 enable: true,
                 color: "#ffffff",

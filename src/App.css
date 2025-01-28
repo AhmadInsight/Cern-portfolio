@@ -1,0 +1,574 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+:root {
+  --primary-white: #fff;
+  --primary-orange: #f9ab00;
+  --primary-grey-blue: #3d466e;
+  --primary-red: #ef4035;
+  --primary-red-hover: #f33501;
+  --primary-black: #000;
+  --primary-dark-grey: #666666;
+  --primary-light-grey: #f4f4f4;
+  --primary-dark: rgb(52, 58, 64);
+  --primary-transparent-black: rgba(0, 0, 0, 0.7);
+  --primary-grey: #ccd1d9;
+}
+nav {
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.logo {
+  width: 8.25rem;
+}
+
+nav a.nav-link {
+  font-size: 0.8rem;
+  /* font-weight: 500; */
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+nav ul li {
+  text-transform: uppercase;
+}
+.navbar-nav > li > a {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  color: var(--primary-white) !important;
+  border-top: 0.1875rem solid var(--primary-dark);
+}
+.navbar-brand {
+  max-width: device-width;
+  height: 5rem !important;
+  padding: 0 !important;
+  /* padding-left: 2rem; */
+}
+.navbar-nav > li > a.active,
+.navbar-nav > li > a.active:focus {
+  border-top: 0.1875rem solid var(--primary-orange) !important;
+}
+.navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid var(--primary-orange) !important;
+}
+.header-wraper {
+  position: relative;
+  background: url(./images/bg-6.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+.main-info h1 {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+}
+.typed-text-new {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+.typed-text {
+  font-size: 2.2rem;
+  color: var(--primary-white);
+}
+.btn-main-offer {
+  border: 1px solid var(--primary-orange);
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--primary-white);
+  margin: 2rem;
+}
+.btn-main-offer:hover {
+  text-decoration: none;
+  background-color: var(--primary-orange);
+  color: var(--primary-white);
+  transition: 0.7s ease-in-out;
+}
+.for-solid{
+  background-color: var(--primary-orange) !important;
+  border-radius: 3px;
+}
+.for-solid:hover{
+  background-color: transparent !important;
+  transition: 0.7s ease-in-out;
+
+}
+
+#tsparticles {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+@media (max-width: 786px) {
+  
+  .main-info h1 {
+    font-size: 1.5rem !important;
+  }
+  .typed-text {
+    font-size: 1.1rem !important;
+  }
+  .typed-text-new {
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    font-size: 1.8rem !important;
+  }
+  .navbar-brand {
+    width: 7rem;
+  }
+}
+@media (max-width: 991px) {
+  
+  .main-info h1 {
+    font-size: 1.7rem !important;
+  }
+  .typed-text {
+    font-size: 1.5rem !important;
+  }
+  .typed-text-new {
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    font-size: 2rem !important;
+  }
+  .navbar-brand {
+    width: 7rem;
+  }
+}
+/************************ ABOUT ME ************************/
+.photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-img {
+  z-index: 1;
+  width: 12rem;
+  height: auto;
+  border-radius: 50%;
+  padding: 0.3rem;
+  border: 1px solid var(--primary-orange);
+  object-fit: cover;
+}
+.about-heading {
+  text-transform: uppercase;
+  color: var(--primary-orange);
+}
+@media (max-width: 468px) {
+  .profile-img {
+    width: 10rem;
+  }
+}
+/************************ FOOTER ************************/
+.footer {
+  z-index: 1 !important;
+  background: var(--primary-black);
+  padding: 3rem;
+  color: var(--primary-dark-grey);
+  position: relative;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--primary-dark-grey);
+}
+.footer a:hover {
+  text-decoration: none;
+  color: var(--primary-orange);
+  cursor: pointer;
+  transition: 1s;
+}
+.footer .col-lg-4, .footer .col-lg-3, .footer .col-lg-5 {
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+@media (max-width: 768px) {
+  .footer .col-lg-4, 
+  .footer .col-lg-3, 
+  .footer .col-lg-5 {
+    text-align: center;
+  }
+
+  .footer .col-lg-4 {
+    margin-bottom: 5px; /* Increase spacing for contact info */
+  }
+
+  /* Add margin to the email and other contact info for spacing */
+  .footer .col-lg-4 p {
+    margin-bottom: 5px; /* Add space between contact details */
+  }
+
+  /* Adjust the footer-nav links on smaller screens */
+  .footer-nav {
+    margin-bottom: 5px; /* Add more space between the links */
+  }
+
+  /* Space between the first column and second column (in smaller screens) */
+  .footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  /* Add more space between the email and Home link */
+  .footer .col-lg-4 .d-flex {
+    margin-bottom: 5px; /* Add space between email and phone links */
+  }
+}
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer p {
+  margin-bottom: 0;
+  color: var(--primary-dark-grey);
+}
+.footer-icons {
+  margin: 1rem;
+}
+/************************ SERVICES ************************/
+.services {
+  text-align: center;
+  padding-bottom: 2rem;
+  background-color: var(--primary-light-grey);
+}
+.services h1 {
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+.services .circle {
+  position: relative;
+  margin: 0.375rem auto;
+  background: var(--primary-orange);
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.services .icon {
+  font-size: 1.4rem;
+  color: var(--primary-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.services .box {
+  height: 16rem;
+  border-bottom: 0.325rem solid var(--primary-orange);
+  padding: 0.625rem;
+  margin-bottom: 1.875rem;
+  background-color: var(--primary-white);
+  transition: 0.7s ease-in-out;
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+.services .box:hover {
+  background: var(--primary-orange);
+  border-bottom: 0.3125rem solid var(--primary-dark);
+  color: var(--primary-white);
+}
+
+.services .box:hover .icon {
+  color: var(--primary-dark);
+}
+.services .box:hover .circle {
+  background: var(--primary-white);
+}
+
+/************************ EXPERIENCE ************************/
+
+/************************ PORTFOLIO ************************/
+.portfolio-wrapper {
+  background: var(--primary-light-grey);
+  padding: 3rem 0;
+  margin: 0 auto;
+}
+
+.portfolio-wrapper h1 {
+  color: var(--primary-orange);
+}
+
+.image-box-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/************************ TESTIMONIALS ************************/
+.testimonials {
+  background-image: url(./images/testimonials-bg.jpg);
+  background-size: cover;
+  background-color: var(--primary-black);
+  text-align: center;
+  padding-bottom: 0;
+  width: 100%;
+}
+.testimonials h1 {
+  color: var(--primary-orange);
+  padding: 3rem 0;
+  text-transform: uppercase;
+}
+
+.testimonials-content {
+  text-align: center;
+  max-width: 53.125rem;
+  margin: 0 auto;
+  background: var(--primary-transparent-black);
+}
+.myCarousel {
+  color: var(--primary-white);
+  background: transparent;
+  margin: -6% auto 0 auto;
+  height: 17.875rem;
+  width: 80%;
+  padding: 6% 5% 8% 5%;
+}
+.myCarousel-aliya {
+  color: var(--primary-white);
+  background: transparent;
+  margin: -6% auto 0 auto;
+  height: 17.875rem;
+  width: 40%;
+  padding: 6% 5% 8% 5%;
+}
+.myCarousel-aliya h3 {
+  color: var(--primary-orange);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.myCarousel-aliya p {
+  color: var(--primary-grey);
+  word-spacing: 3px;
+}
+.myCarousel h3 {
+  color: var(--primary-orange);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.myCarousel p {
+  color: var(--primary-grey);
+}
+.carousel .slide img {
+  width: 10rem !important;
+  border-radius: 50%;
+}
+
+.carousel .slide {
+  background: transparent !important;
+  height: 100% !important;
+  padding-top: 2rem;
+}
+.carousel-root {
+  margin: 3% auto auto auto !important;
+}
+
+/************************ CONTACTS COMPONENT ************************/
+.contacts {
+  background: var(--primary-dark);
+  padding: 3rem 0;
+}
+
+.contacts h1 {
+  color: var(--primary-orange);
+  padding: 1.3rem 0;
+  text-transform: uppercase;
+}
+
+.contacts p {
+  color: var(--primary-light-grey);
+  font-size: 1.2rem;
+}
+
+/*------ INPUTS ------ */
+.form-control {
+  font-size: 20px; /* Size of the text in input fields */
+}
+.form-control::placeholder {
+  font-size: 20px; /* Size of the placeholder text */
+ /* Optional: Change placeholder color */
+ color: #f4f4f4;
+}
+
+.contacts input,
+.contacts textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  resize: none;
+  border: 0;
+  border-bottom: 0.125rem solid var(--primary-dark-grey);
+  border-radius: 0;
+  color: var(--primary-grey);
+  outline: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 1rem;
+  padding-left: 0 !important;
+}
+
+.contacts .container {
+  padding: 4rem 0;
+}
+
+.contacts input:focus,
+.contacts textarea:focus {
+  background: transparent;
+  color: var(--primary-orange);
+  border-bottom: 0.125rem solid var(--primary-dark-grey);
+}
+
+.contacts textarea {
+  height: 12.2rem !important;
+}
+
+.contact-btn {
+  margin: 1rem 0 0 0;
+  width: 100%;
+  background: none;
+}
+
+.line {
+  position: relative;
+  top: -0.8rem;
+  width: 0;
+  height: 0.125rem;
+  background: var(--primary-orange);
+  display: inline-block;
+}
+
+.error-message {
+  color: #f9ab00;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+input:focus + .line,
+textarea:focus + .line {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+input.form-control {
+  margin: -0.3rem 0;
+}
+
+textarea.form-control {
+  margin: -0.3rem 0;
+}
+
+.error-message {
+  color: var(--primary-white);
+  background: var(--primary-hover-red);
+  text-align: left;
+}
+.error-message {
+  color: #f9ab00 !important;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.success-message {
+  font-weight: 900 !important;
+  font-size: 27px;
+  color: var(--primary-orange);
+}
+/*---------------------SCROLLBAR-----------------*/
+/* For Webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;  /* width of vertical scrollbar */
+  height: 10px; /* height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666666; /* Thumb color */
+  border-radius: 15px;       /* Rounded corners */
+  border: 2px solid #ffffff; /* Border around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f9ab00; /* Darker thumb color on hover */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background color */
+  border-radius: 10px;  /* Rounded corners */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #666666 #f1f1f1;
+}
+
+/* Responsive scrollbars for mobile devices */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;  /* Smaller scrollbar for mobile */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #666666; /* Different color for mobile */
+  }
+}
+
+
+
+/*------ MEDIA ------ */
+@media (max-width:786px){
+  .contacts {
+    overflow-x: hidden;
+  }
+  .form-control::placeholder {
+    font-size: 16px; /* Size of the placeholder text */
+   /* Optional: Change placeholder color */
+  }
+  .contacts .container {
+    padding: 0 1rem;
+  }
+
+  .contacts p {
+    padding: 0 0.4rem;
+  }
+  .myCarousel {
+    color: var(--primary-white);
+    background: transparent;
+    margin: -6% auto 0 auto;
+    height: 17.875rem;
+    width: 90%;
+    padding: 6% 5% 8% 5%;
+  }
+  .myCarousel-aliya {
+    color: var(--primary-white);
+    background: transparent;
+    margin: -6% auto 0 auto;
+    height: 17.875rem;
+    width: 90%;
+    padding: 6% 5% 8% 5%;
+  }
+}

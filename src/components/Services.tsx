@@ -1,5 +1,9 @@
-import { FaFacebookF, FaFileCode, FaGoogle } from "react-icons/fa6";
+import {  FaFileCode } from "react-icons/fa6";
 import { CiDesktop } from "react-icons/ci";
+import { TbDeviceAnalytics } from "react-icons/tb";
+import { LiaCodeBranchSolid } from "react-icons/lia";
+
+
 
 export const Services = () => {
   return (
@@ -38,28 +42,26 @@ export const Services = () => {
           <div className="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div className="box">
               <div className="circle">
-                <FaFacebookF className="icon" size="24" />
+                <LiaCodeBranchSolid className="icon" size="30" />
               </div>
-              <h3>Facebook / SMM</h3>
+              <h3>Softawre Development</h3>
               <p>
-                I drive brand growth with data-driven Social Media Marketing
-                strategies, specializing in content creation, audience
-                engagement, and performance optimization across platforms like
-                Facebook, Instagram, and LinkedIn.
+                Versatile Software Developer crafting efficient, scalable
+                solutions with a focus on innovation and seamless user
+                experiences.
               </p>
             </div>
           </div>
           <div className="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div className="box">
               <div className="circle">
-                <FaGoogle className="icon" size="21" />
+                <TbDeviceAnalytics className="icon" size="21" />
               </div>
-              <h3>Google Ads</h3>
+              <h3>Data Analysis</h3>
               <p>
-                I create high-impact Google Ads campaigns that boost visibility,
-                drive traffic, and maximize ROI. With expertise in targeting,
-                optimization, and budget management,I deliver measurable
-                results aligned with business goals.
+                Impact-driven Data Analyst with expertise in transforming
+                complex data into powerful insights using SQL, Python, and
+                visualization to fuel smarter decisions and business growth.
               </p>
             </div>
           </div>

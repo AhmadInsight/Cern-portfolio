@@ -7,14 +7,14 @@ export const Header = () => {
       <div className="main-info">
         <ReactTyped
           className="typed-text-new"
-          strings={["I am Dr.Waheed Anwar"]}
+          strings={["I am Ahmad Hassan"]}
           typeSpeed={50}
         />
         <ReactTyped
           className="typed-text"
           strings={[
             "Full Stack Web Developer",
-            "Assistant Professor",
+            "Data Analyst",
             "Software Developer",
           ]}
           typeSpeed={50}

@@ -6,12 +6,11 @@ import { Link } from "react-scroll";
 export const Navbar = () => {
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
-      style={{ backgroundColor: "#3D466E" }}
+      className="navbar navbar-expand-lg fixed-top rounded-pill"
     >
       <div className="container">
         <a className="navbar-brand" href="#">
-          <img src={logo} alt="Waheed Anwar" className="logo" />
+          <img src={logo} alt="Ahmad Hassan" className="logo" />
         </a>
         <button
           className="navbar-toggler"

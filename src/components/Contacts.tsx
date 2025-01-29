@@ -50,7 +50,7 @@ const Contacts = () => {
       .send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, variables, YOUR_USER_ID)
       .then(
         (response) => {
-          console.log("Email sent successfully:", response); // Log the response
+          console.log("Email sent successfully:", response); 
           setSuccessMessage("Message sent successfully! I'll contact you soon.");
           alert("Message sent successfully! I'll contact you soon.")
         },
@@ -66,10 +66,10 @@ const Contacts = () => {
     <div id="contacts" className="contacts">
 
       <div className="text-center">
-        <h1 className="text-gradient" style={{ fontSize: "3rem" }}>Contact Me</h1>
-        <p className="text-gradient" style={{ fontSize: "2rem" }}>
+        <h1 className="text-gradient">Contact Me</h1>
+        <h4 className="text-gradient">
           Please fill the form below and describe your project. I'll contact you soon. Thank you.
-        </p>
+        </h4>
         <span className="success-message">{successMessage}</span>
       </div>
       <div className="container">

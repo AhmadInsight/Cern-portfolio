@@ -43,9 +43,9 @@ nav {
   backdrop-filter: blur(20px);
 }
 .text-gradient {
-  background: linear-gradient(to bottom, #fab6e3, #cf75af);
-  background-clip: text;
-  color: transparent;
+  background: linear-gradient(to bottom, #fab6e3, #cf75af) !important;
+  background-clip: text !important;
+  color: transparent !important;
 }
 .nav-link.position-relative::after {
   content: "";

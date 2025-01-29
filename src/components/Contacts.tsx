@@ -66,8 +66,8 @@ const Contacts = () => {
     <div id="contacts" className="contacts">
 
       <div className="text-center">
-        <h1 className="text-gradient">Contact Me</h1>
-        <h4 className="text-gradient">
+        <h1 className="text-gradient-contact">Contact Me</h1>
+        <h4 className="text-gradient-contact">
           Please fill the form below and describe your project. I'll contact you soon. Thank you.
         </h4>
         <span className="success-message">{successMessage}</span>

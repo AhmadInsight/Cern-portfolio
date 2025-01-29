@@ -67,7 +67,7 @@ const Contacts = () => {
 
       <div className="text-center">
         <h1>Contact Me</h1>
-        <p>
+        <p className="text-gradient">
           Please fill the form below and describe your project. I'll contact you soon. Thank you.
         </p>
         <span className="success-message">{successMessage}</span>

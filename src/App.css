@@ -47,6 +47,11 @@ nav {
   background-clip: text !important;
   color: transparent !important;
 }
+.text-gradient-contact {
+  background: linear-gradient(to bottom, #e496c9, #cf75af) !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
 .nav-link.position-relative::after {
   content: "";
   position: absolute;

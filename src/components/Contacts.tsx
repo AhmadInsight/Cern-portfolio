@@ -66,8 +66,8 @@ const Contacts = () => {
     <div id="contacts" className="contacts">
 
       <div className="text-center">
-        <h1 className="text-gradient" style={{font-size:3 rem}}>Contact Me</h1>
-        <p className="text-gradient" style={{font-size:2 rem}}>
+        <h1 className="text-gradient" style={{ fontSize: "3rem" }}>Contact Me</h1>
+        <p className="text-gradient" style={{ fontSize: "2rem" }}>
           Please fill the form below and describe your project. I'll contact you soon. Thank you.
         </p>
         <span className="success-message">{successMessage}</span>

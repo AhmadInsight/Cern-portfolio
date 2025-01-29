@@ -475,6 +475,8 @@ nav ul li {
 .contacts textarea:focus {
   background: transparent;
   color: linear-gradient(to bottom, #fab6e3, #cf75af);
+  background-clip: text;
+  color: transparent;
   border-bottom: 0.125rem solid var(--primary-dark-grey);
 }
 

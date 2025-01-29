@@ -18,9 +18,9 @@ const Contacts = () => {
     formState: { errors },
   } = useForm<ContactFormData>(); // Typing the form data
 
-  const YOUR_SERVICE_ID = "service_6mz01kf";
-  const YOUR_TEMPLATE_ID = "template_903pbbw";
-  const YOUR_USER_ID = "PCwOBm_-ejT22KU5M";
+  const YOUR_SERVICE_ID = "service_tsc7u4a";
+  const YOUR_TEMPLATE_ID = "template_08qonro";
+  const YOUR_USER_ID = "v8GtOcsimUNerqAx5";
 
   // Typing the onSubmit function
   const onSubmit = (data: ContactFormData, r: React.BaseSyntheticEvent) => {

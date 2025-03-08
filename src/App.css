@@ -494,6 +494,11 @@ nav ul li {
   background: none;
 }
 
+#contact-btn{
+/*     border-radius: 3px !important; */
+    border: 1px solid var(--primary-purple);
+}
+
 /* Contacts Section */
 /* Contacts Section Styling */
 .contacts {

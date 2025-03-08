@@ -170,7 +170,7 @@ const Contacts = () => {
                 <div className="line"></div>
                 <span className="error-message">{errors.description && errors.description.message}</span>
               </div>
-              <button className="btn-main-offer contact-btn for-solid" type="submit">
+              <button id="contact-btn" className="btn-main-offer contact-btn for-solid" type="submit">
                 Contact Me
               </button>
             </div>

@@ -322,13 +322,13 @@ nav ul li {
   padding: 0.625rem;
   margin-bottom: 1.875rem;
   background-color: var(--primary-white);
-  transition: 0.7s ease-in-out;
+  transition: 0.5s ease-in-out;
   font-family: "Roboto Condensed", sans-serif !important;
 }
 .services .box:hover {
-  background: var(--primary-purple);
-  border-bottom: 0.3125rem solid var(--primary-dark);
-  color: var(--primary-white);
+  background: var(--primary-purple) !important;
+  border-bottom: 0.3125rem solid var(--primary-dark) !important;
+  color: var(--primary-white) !important;
 }
 
 .services .box:hover .icon {

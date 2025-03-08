@@ -337,7 +337,38 @@ nav ul li {
 #services  .box:hover .circle {
   background: var(--primary-white);
 }
+#services .icon {
+  font-size: 1.4rem;
+  color: var(--primary-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+#services .box {
+  height: 16rem;
+  border-bottom: 0.325rem solid var(--primary-purple);
+  padding: 0.625rem;
+  margin-bottom: 1.875rem;
+  background-color: var(--primary-white);
+  transition: 0.5s ease-in-out;
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+
+#services .box:hover {
+  background: var(--primary-purple) !important;
+  border-bottom: 0.3125rem solid var(--primary-dark) !important;
+  color: var(--primary-white) !important;
+}
+
+#services .box:hover .icon {
+  color: var(--primary-dark);
+}
+
+#services .box:hover .circle {
+  background: var(--primary-white);
+}
 /************************ EXPERIENCE ************************/
 
 /************************ PORTFOLIO ************************/

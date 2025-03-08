@@ -325,16 +325,16 @@ nav ul li {
   transition: 0.5s ease-in-out;
   font-family: "Roboto Condensed", sans-serif !important;
 }
-.services .box:hover {
+#services  .box:hover {
   background: var(--primary-purple) !important;
   border-bottom: 0.3125rem solid var(--primary-dark) !important;
   color: var(--primary-white) !important;
 }
 
-.services .box:hover .icon {
+#services  .box:hover .icon {
   color: var(--primary-dark);
 }
-.services .box:hover .circle {
+#services  .box:hover .circle {
   background: var(--primary-white);
 }
 

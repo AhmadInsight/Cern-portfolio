@@ -14,7 +14,7 @@ export const Services = () => {
               <div className="circle">
                 <LuBrainCircuit className="icon" size="35" />
               </div>
-              <h3>Web Design</h3>
+              <h3>Machine Learning</h3>
               <p>
                 I develop intelligent ML solutions that automate tasks, uncover
                 insights, and enhance user experiences. From predictive modeling
@@ -67,3 +67,4 @@ export const Services = () => {
     </div>
   );
 };
+

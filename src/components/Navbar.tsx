@@ -173,7 +173,7 @@ export const Navbar = () => {
                 Contacts
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 smooth={true}
                 duration={500}
@@ -187,7 +187,7 @@ export const Navbar = () => {
               >
                 Websites
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

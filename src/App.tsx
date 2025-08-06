@@ -8,7 +8,7 @@ import { loadSlim } from "@tsparticles/slim";
 import { AboutMe } from "./components/AboutMe";
 import { Footer } from "./components/Footer";
 import { Services } from "./components/Services";
-import { Testimonials } from "./components/Testimonials";
+// import { Testimonials } from "./components/Testimonials";
 import Contacts from "./components/Contacts.tsx";
 import { Engine } from "@tsparticles/core"; // or from another appropriate source
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -117,7 +117,7 @@ function App() {
       <Header />
       <AboutMe />
       <Services />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contacts />
       <Footer />
       <SpeedInsights />

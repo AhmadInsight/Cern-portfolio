@@ -1,9 +1,7 @@
-import {  FaFileCode } from "react-icons/fa6";
-import { CiDesktop } from "react-icons/ci";
+import { FaFileCode } from "react-icons/fa6";
+import { LuBrainCircuit } from "react-icons/lu";
 import { TbDeviceAnalytics } from "react-icons/tb";
 import { LiaCodeBranchSolid } from "react-icons/lia";
-
-
 
 export const Services = () => {
   return (
@@ -14,14 +12,13 @@ export const Services = () => {
           <div className="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div className="box">
               <div className="circle">
-                <CiDesktop className="icon" size="35" />
+                <LuBrainCircuit className="icon" size="35" />
               </div>
-
               <h3>Web Design</h3>
               <p>
-                I design intuitive UI/UX solutions that grow with your business,
-                delivering tailored, user-friendly experiences on time.
-                Let&#39;s bring your vision to life.
+                I develop intelligent ML solutions that automate tasks, uncover
+                insights, and enhance user experiences. From predictive modeling
+                to recommendation systems, I leverage Python, Scikit-learn
               </p>
             </div>
           </div>

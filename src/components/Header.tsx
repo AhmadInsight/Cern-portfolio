@@ -13,9 +13,9 @@ export const Header = () => {
         <ReactTyped
           className="typed-text"
           strings={[
-            "Full Stack Web Developer",
+            "Machine Learning Enthusiat",
             "Data Analyst",
-            "Software Developer",
+            "Full Stack Web Developer",
           ]}
           typeSpeed={50}
           backSpeed={40}

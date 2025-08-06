@@ -27,20 +27,56 @@ body {
   --primary-back: #a79cb8;
   --primary-back1: #abb3ce;
 }
+
+/* Modern, glassy sticky navbar */
+nav.modern-navbar,
 nav {
-  z-index: 10;
-  width: 90%;
+  z-index: 1000;
+  width: 100%;
   display: flex;
-  overflow: hidden;
   position: fixed;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
-  padding: 0.5rem 1rem !important;
-  top: 1rem !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  height: 4rem !important;
-  background: rgba(153, 111, 161, 0.5);
-  backdrop-filter: blur(20px);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1rem !important;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  background: rgba(24, 22, 40, 0.35);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: box-shadow 200ms ease, transform 200ms ease, background 200ms ease,
+    border-color 200ms ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Backdrop via pseudo-element on host (no extra DOM node) */
+.modern-navbar__backdrop-host {
+  position: fixed; /* remove from flow so it doesn't push layout */
+  inset: 0;
+  z-index: 998; /* below navbar (1000) but above page content; adjust as needed relative to your menu */
+  pointer-events: none; /* disabled by default when closed */
+}
+.modern-navbar__backdrop-host::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+.modern-navbar__backdrop-host.is-open {
+  pointer-events: none; /* allow clicks to bubble to the host for onClick close */
+}
+.modern-navbar__backdrop-host.is-open::before {
+  opacity: 1;
+  pointer-events: none; /* makes the overlay area clickable */
+}
+.modern-navbar.is-elevated {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  background: rgba(24, 22, 40, 0.45);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 .text-gradient {
   background: linear-gradient(to bottom, #fab6e3, #cf75af) !important;
@@ -48,7 +84,7 @@ nav {
   color: transparent !important;
 }
 .text-gradient-contact {
-  background: linear-gradient(to bottom, #fff5fa , #f7c0e0  ) !important;
+  background: linear-gradient(to bottom, #fff5fa, #f7c0e0) !important;
   background-clip: text !important;
   color: transparent !important;
 }
@@ -64,42 +100,121 @@ nav {
 }
 
 .logo {
-  width: 5.25rem;
+  width: 3rem;
+  height: auto;
+  padding: 0;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 991px) {
+  .logo {
+    /* width: 6.5rem; */
+  }
+}
+@media (max-width: 576px) {
+  .logo {
+    width: 2.5rem;
+  }
 }
 
+/* Links */
 nav a.nav-link {
-  font-size: 0.825rem;
-  /* font-weight: 500; */
-  letter-spacing: 0.0375rem;
+  position: relative;
+  font-size: 0.9rem;
+  letter-spacing: 0.04rem;
   cursor: pointer;
+  color: var(--primary-grey) !important;
+  text-transform: uppercase;
+  transition: color 150ms ease;
+}
+nav a.nav-link:hover {
+  color: #e6dcff !important;
 }
 body {
   font-family: "Times New Roman", Times, serif;
 }
 nav ul li {
   text-transform: uppercase;
+  justify-content: center;
+  display: flex;
 }
 .navbar-nav > li > a {
   margin: 0.05rem;
   margin-right: 0.75rem;
   margin-left: 0.75rem;
-  color: var(--primary-grey) !important;
-  /* border-top: 0.1875rem solid var(--primary-dark); */
+  position: relative;
   border-top: 0.1875rem transparent;
 }
 .navbar-brand {
   /* max-width: device-width; */
   /* height: 4rem !important; */
-  /* padding: 0; */
+  padding: 0;
   /* padding-left: 2rem; */
 }
-.navbar-nav > li > a.active,
-.navbar-nav > li > a.active:focus {
-  border-top: 0.1875rem solid var(--primary-purple) !important;
+.toggler-btn svg {
+  height: 1.125em;
 }
-.navbar-nav > li > a:hover {
-  border-top: 0.1875rem solid var(--primary-purple) !important;
+.toggler-btn svg path {
+  fill: #fff;
 }
+.toggler-btn {
+  border: 0px;
+  box-shadow: unset !important;
+}
+.mobile-navbar-menu {
+  transition: all 0.3s ease-in-out;
+}
+/* Animated underline from middle */
+.navbar-nav > li > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b084f5, #ff76c8);
+  transform: translateX(-50%);
+  transition: width 240ms ease;
+  border-radius: 2px;
+}
+
+/* Keep underline visible for active section (react-scroll adds .active) */
+.navbar-nav > li > a.active::after {
+  width: 60%;
+}
+
+/* Hover/focus states still animate, but active persists after hover leaves */
+.navbar-nav > li > a:hover::after,
+.navbar-nav > li > a:focus::after {
+  width: 60%;
+}
+
+/* Optional: active link color to reflect current section */
+nav a.nav-link.active {
+  color: #e6dcff !important;
+}
+/* remove duplicate hover block; handled above */
+
+@keyframes expandFromMiddle {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .rounded-pill-md {
+    border-radius: 50rem !important;
+  }
+  nav.modern-navbar,
+  nav {
+    width: 92%;
+    top: 1rem !important;
+  }
+}
+
 .header-wraper {
   position: relative;
   background: url(./images/bg-6.jpg);
@@ -142,23 +257,23 @@ nav ul li {
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
   color: var(--primary-white);
   margin: 2rem;
+  cursor: pointer;
 }
 .btn-main-offer:hover {
   text-decoration: none;
   background-color: var(--primary-purple);
   color: var(--primary-white);
-  transition: 0.7s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .for-solid {
   background-color: var(--primary-purple) !important;
   border-radius: 3px;
   border: 2px solid var(--primary-purple);
-
 }
 .for-solid:hover {
   border: 2px solid var(--primary-purple);
   background-color: transparent !important;
-  transition: 0.7s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 #tsparticles {
@@ -180,7 +295,10 @@ nav ul li {
     font-size: 1.8rem !important;
   }
   .navbar-brand {
-    width: 7rem;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
 @media (max-width: 991px) {
@@ -199,7 +317,7 @@ nav ul li {
     width: 7rem;
   }
   .logo {
-    width: 2.8rem;
+    /* width: 6.5rem; */
   }
 }
 /************************ ABOUT ME ************************/
@@ -242,7 +360,7 @@ nav ul li {
   text-decoration: none;
   color: var(--primary-brigth-pink);
   cursor: pointer;
-  transition: 1s;
+  transition: 0.5s;
 }
 .footer .col-lg-4,
 .footer .col-lg-3,
@@ -307,6 +425,7 @@ nav ul li {
   border-radius: 50%;
   width: 3.125rem;
   height: 3.125rem;
+  transition: all 0.3s ease-in-out;
 }
 .services .icon {
   font-size: 1.4rem;
@@ -322,19 +441,19 @@ nav ul li {
   padding: 0.625rem;
   margin-bottom: 1.875rem;
   background-color: var(--primary-white);
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   font-family: "Roboto Condensed", sans-serif !important;
 }
-#services  .box:hover {
+#services .box:hover {
   background: var(--primary-purple) !important;
   border-bottom: 0.3125rem solid var(--primary-dark) !important;
   color: var(--primary-white) !important;
 }
 
-#services  .box:hover .icon {
+#services .box:hover .icon {
   color: var(--primary-dark);
 }
-#services  .box:hover .circle {
+#services .box:hover .circle {
   background: var(--primary-white);
 }
 #services .icon {
@@ -347,12 +466,14 @@ nav ul li {
 }
 
 #services .box {
+  position: relative;
+  z-index: 2;
   height: 16rem;
   border-bottom: 0.325rem solid var(--primary-purple);
   padding: 0.625rem;
   margin-bottom: 1.875rem;
   background-color: var(--primary-white);
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   font-family: "Roboto Condensed", sans-serif !important;
 }
 
@@ -525,9 +646,9 @@ nav ul li {
   background: none;
 }
 
-#contact-btn{
-/*     border-radius: 3px !important; */
-    border: 1px solid var(--primary-purple);
+#contact-btn {
+  /*     border-radius: 3px !important; */
+  border: 1px solid var(--primary-purple);
 }
 
 /* Contacts Section */
@@ -622,7 +743,6 @@ nav ul li {
   border-radius: 5px !important;
 }
 
-
 .line {
   position: relative;
   top: -0.8rem;
@@ -642,7 +762,7 @@ nav ul li {
 input:focus + .line,
 textarea:focus + .line {
   width: 100%;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 input.form-control {

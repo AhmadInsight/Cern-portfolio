@@ -1,73 +1,192 @@
 import logo from "../images/3-2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
+import { useEffect, useRef, useState } from "react";
 
+/**
+ * Modern, sticky, glassy Navbar with:
+ * - Accessible brand link
+ * - Image dimension hints to prevent CLS
+ * - Mobile menu with ESC/Backdrop/Outside-click close
+ * - Scroll-aware subtle shadow
+ * - React-Scroll links with offsets
+ */
 export const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const [elevated, setElevated] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  const btnRef = useRef<HTMLButtonElement | null>(null);
+
+  // Elevate nav on scroll a bit for depth
+  useEffect(() => {
+    const onScroll = () => setElevated(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close on ESC
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const onDocClick = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(target) &&
+        btnRef.current &&
+        !btnRef.current.contains(target)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, [open]);
+
+  const navClasses =
+    "navbar navbar-expand-lg fixed-top rounded-pill-md modern-navbar" +
+    (elevated ? " is-elevated" : "");
+
   return (
-    <nav
-      className="navbar navbar-expand-lg fixed-top rounded-pill"
-    >
-      <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src={logo} alt="Ahmad Hassan" className="logo" />
+    <nav className={navClasses} aria-label="Primary">
+      <div className="container modern-navbar__inner">
+        {/* Brand */}
+        <a className="navbar-brand" href="/" aria-label="Go to homepage">
+          <img
+            src={logo}
+            alt="Ahmad Hassan logo"
+            className="logo"
+            width={128}
+            height={32}
+            loading="eager"
+            decoding="async"
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              target.style.display = "none";
+              const sibling = target.nextElementSibling as HTMLElement | null;
+              if (sibling) sibling.style.display = "inline";
+            }}
+          />
+          <span className="sr-only" style={{ display: "none" }}>
+            Ahmad Hassan
+          </span>
         </a>
+
+        {/* Toggler (custom + accessible) */}
         <button
-          className="navbar-toggler"
+          ref={btnRef}
+          className="navbar-toggler toggler-btn modern-navbar__toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-expanded={open}
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          onClick={() => setOpen((v) => !v)}
         >
-          <FontAwesomeIcon icon={faBars} style={{ color: "white" }} />
+          <FontAwesomeIcon icon={open ? faXmark : faBars} />
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item active">
-              <Link smooth={false} to="home" className="nav-link" href="#">
-                Home <span className="sr-only"></span>
+        {/* Backdrop via pseudo-element: no extra DOM node; click on host closes */}
+        <div
+          className={"modern-navbar__backdrop-host" + (open ? " is-open" : "")}
+          aria-hidden={!open}
+          onClick={() => open && setOpen(false)}
+        />
+
+        {/* Menu */}
+        <div
+          id="navbarSupportedContent"
+          ref={menuRef}
+          className={
+            "collapse navbar-collapse mobile-navbar-menu modern-navbar__menu" + (open ? " show" : "")
+          }
+          role="menu"
+        >
+          <ul className="navbar-nav ms-auto modern-navbar__list">
+            <li className="nav-item">
+              <Link
+                smooth={true}
+                duration={500}
+                to="home"
+                spy={true}
+                hashSpy={true}
+                className="nav-link"
+                activeClass="active"
+                offset={-100}
+                onClick={() => setOpen(false)}
+              >
+                Home
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                smooth={false}
+                smooth={true}
+                duration={500}
                 to="about"
-                offset={-110}
+                spy={true}
+                hashSpy={true}
+                activeClass="active"
+                offset={-100}
                 className="nav-link"
-                href="#"
+                onClick={() => setOpen(false)}
               >
-                about me
+                About me
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                smooth={false}
+                smooth={true}
+                duration={500}
                 to="services"
-                offset={-110}
+                spy={true}
+                hashSpy={true}
+                activeClass="active"
+                offset={-100}
                 className="nav-link"
-                href="#"
+                onClick={() => setOpen(false)}
               >
-                services
+                Services
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                smooth={false}
+                smooth={true}
+                duration={500}
                 to="contacts"
-                offset={-110}
+                spy={true}
+                hashSpy={true}
+                activeClass="active"
+                offset={-100}
                 className="nav-link"
-                href="#"
+                onClick={() => setOpen(false)}
               >
-                contacts
+                Contacts
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link
+                smooth={true}
+                duration={500}
+                to="portfolio"
+                spy={true}
+                hashSpy={true}
+                activeClass="active"
+                offset={-100}
+                className="nav-link"
+                onClick={() => setOpen(false)}
+              >
                 Websites
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

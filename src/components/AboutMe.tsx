@@ -12,14 +12,15 @@ export const AboutMe = () => {
         <div className="col-lg-6 col-xm-12">
           <h1 className="about-heading">About Me</h1>
           <p>
-            I’m Ahmad Hassan, a dedicated software engineer specializing in
-            modern, scalable web apps. Passionate about web innovation,
-            I craft dynamic, responsive websites with seamless front-end
-            experiences and robust backend systems. With expertise in Python,
-            MySQL, and Java, I focus on integrating complex functionalities to
-            deliver efficient, user-friendly solutions. My goal is to leverage
-            the latest technologies to build applications that empower
-            businesses and enhance user engagement.
+            I am Ahmad Hassan, a dedicated software engineer with a passion for
+            leveraging technology to solve complex problems and uncover
+            meaningful insights from data. I specialize in developing robust,
+            data-driven applications and have a strong foundation in scientific
+            computing, data analysis, and algorithm design. With expertise in
+            Python, Java, and SQL, I focus on building efficient, scalable
+            solutions that blend technical performance with real-world impact.
+            My goal is to apply my skills to challenging, data-intensive
+            environments to contribute to discovery and innovation.
           </p>
         </div>
       </div>
